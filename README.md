@@ -28,8 +28,8 @@ def f(X):
 
 ## WOA
 - Whale Optimization Algorithm Code in woa.py
-  - # of whales : **n_whale** (default: 100, __init__ parameter)
-  - # of iterations : **n_iter** (default: 100, __init__ parameter)
+  - \# of whales : **n_whale** (default: 100, __init__ parameter)
+  - \# of iterations : **n_iter** (default: 100, __init__ parameter)
   - Spiral Constant : **spiral_constant** (default: 0.5, __init__ parameter)
     - controls the shape of the spiral which whales follow (from [here](https://github.com/HaaLeo/swarmlib/blob/master/swarmlib/woa/main.py))
 
