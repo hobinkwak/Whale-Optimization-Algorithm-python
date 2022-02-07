@@ -17,13 +17,13 @@ class WOA:
         self.prey = {}
 
     def init_whale(self):
-        tmp = [[np.random.uniform(self.lb[j], self.ub[j]) for j in range(len(self.lb))]
-               for i in range(self.n_whale)]
+        tmp = [np.random.uniform(self.lb, self.ub, size=(len(self.lb),))
+               for i in range(self.woa_param['n_whale'])]
         self.whale['position'] = np.array(tmp)
         self.whale['fitness'] = self.obj_func(self.whale['position'])
 
     def init_prey(self):
-        tmp = [[np.random.uniform(self.lb[j], self.ub[j]) for j in range(len(self.lb))]]
+        tmp = [np.random.uniform(self.lb, self.ub, size=(len(self.lb),))]
         self.prey['position'] = np.array(tmp)
         self.prey['fitness'] = self.obj_func(self.prey['position'])
 
@@ -55,8 +55,8 @@ class WOA:
         r = np.random.random(self.n_whale)
         A = 2 * a * r - a
         C = 2 * r
-        search_idx = np.where((p < 0.5) & (A > 1))
-        encircle_idx = np.where((p < 0.5) & (A <= 1))
+        search_idx = np.where((p < 0.5) & (abs(A) > 1))
+        encircle_idx = np.where((p < 0.5) & (abs(A) <= 1))
         bubbleNet_idx = np.where(p >= 0.5)
         self.search(search_idx, A[search_idx], C[search_idx])
         self.encircle(encircle_idx, A[encircle_idx], C[encircle_idx])
