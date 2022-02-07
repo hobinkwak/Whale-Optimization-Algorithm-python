@@ -1,4 +1,4 @@
-## Whale-Optimization-Algorithm-python
+## Whale Optimization Algorithm python
 - simple WOA (Whale Optimization Algorithm) implementation
 - used Numpy for matrix computation (**No For Loop**)
 - Original Paper [here](http://fa.mie.sut.ac.ir/Downloads/AcademicStaff/5/Courses/17/The%20Whale%20Optimization%20Algorithm%202016.pdf)
