@@ -45,7 +45,7 @@ class WOA:
         d_prime = np.abs(self.prey['position'] - self.whale['position'][idx])
         l = (b -1) * np.random.random(size=len(idx[0])) + 1
         self.whale["position"][idx] = np.clip(
-            d_prime * np.exp(self.woa_param["spiral"] * l)[..., np.newaxis] * np.cos(2 * np.pi * l)[..., np.newaxis]
+            d_prime * np.exp(self.spiral_constant * l)[..., np.newaxis] * np.cos(2 * np.pi * l)[..., np.newaxis]
             + self.prey["position"],
             self.lb,
             self.ub,
