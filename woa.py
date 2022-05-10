@@ -17,7 +17,7 @@ class WOA:
 
     def init_whale(self):
         tmp = [np.random.uniform(self.lb, self.ub, size=(len(self.lb),))
-               for i in range(self.woa_param['n_whale'])]
+               for i in range(self.n_whale)]
         self.whale['position'] = np.array(tmp)
         self.whale['fitness'] = self.obj_func(self.whale['position'])
 
